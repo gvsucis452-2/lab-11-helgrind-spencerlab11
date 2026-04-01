@@ -1,5 +1,4 @@
 1. First build main-race.c. Examine the code so you can see the (hopefully obvious) data race in the code. Now run helgrind (by typing valgrind \--tool=helgrind ./main-race) to see how it reports the race.
-
 • Does it point to the right lines of code?  
 • What other information does it give to you?
 
@@ -22,7 +21,6 @@ It reports there are 2 errors
 No errors
 
 5. Next examine main-deadlock.c. This code has a problem known as deadlock (which we discuss in much more depth in a forthcoming chapter). Based on this code,
-
 •Describe what a deadlock is.  
 •Why specifically does this code have a deadlock?
 
@@ -36,7 +34,6 @@ This code has a deadlock because thread1 could grab lock1, and thread2 could gra
 It reports an error that a lock order principle is violated.
 
 7. Examine main-deadlock-global.c.
-
 •Does it have the same problem that main-deadlock.c has?  
 •Why or why not?  
 •Should helgrind be reporting the same error?  
@@ -52,7 +49,6 @@ Valgrind shouldn’t report the same error, but it does anyway.
 The parent just spins and takes up CPU time while waiting for the child. 
 
 9. Run helgrind on this program.
-
 •What does it report?  
 •Is the code correct?
 
